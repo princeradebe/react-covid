@@ -1,21 +1,21 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { CardList } from './components/card-list/card-list.component';
 import { SearchBox } from './components/search-box/search-box.component';
 import './App.css';
 
 class App extends Component {
-  constructor(){
+  constructor() {
     super();
     this.state = {
-      monsters : [], 
+      data: [],
       searchField: ""
     };
   }
 
   componentDidMount() {
-    fetch('http://jsonplaceholder.typicode.com/users')
-    .then(response => response.json())
-    .then(users => this.setState({ monsters: users }))
+    fetch('https://disease.sh/v3/covid-19/countries/')
+      .then(response => response.json())
+      .then(data => this.setState({ data: data }))
   }
 
   handleChange = (e) => {
@@ -23,16 +23,16 @@ class App extends Component {
   }
 
   render() {
-    const { monsters, searchField} = this.state;
-    const filteredMonsters = monsters.filter( monster => 
-      monster.name.toLowerCase().includes(searchField.toLowerCase())
+    const { data, searchField } = this.state;
+    const filteredCountries = data.filter(country =>
+      country.country.toLowerCase().includes(searchField.toLowerCase())
     )
     return (
       <div className="App">
-      <h1> Mosters Rolodex </h1>
-      <SearchBox placeholder= 'search monsters' handleChange={ this.handleChange } />
-      <CardList monsters={ filteredMonsters } />
-    </div>
+        <h1> React Covid </h1>
+        <SearchBox placeholder='search country' handleChange={this.handleChange} />
+        <CardList countries={filteredCountries} />
+      </div>
     );
   }
 }

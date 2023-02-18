@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/react-covid/static/css/main.cb357034.css",
-    "main.js": "/react-covid/static/js/main.10e59276.js",
+    "main.js": "/react-covid/static/js/main.ebf30f31.js",
     "index.html": "/react-covid/index.html",
     "main.cb357034.css.map": "/react-covid/static/css/main.cb357034.css.map",
-    "main.10e59276.js.map": "/react-covid/static/js/main.10e59276.js.map"
+    "main.ebf30f31.js.map": "/react-covid/static/js/main.ebf30f31.js.map"
   },
   "entrypoints": [
     "static/css/main.cb357034.css",
-    "static/js/main.10e59276.js"
+    "static/js/main.ebf30f31.js"
   ]
 }
